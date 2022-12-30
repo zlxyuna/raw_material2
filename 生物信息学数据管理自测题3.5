@@ -1,0 +1,48 @@
+#3.1 读取和写入文件
+filein = open（“random_1.txt”，“r”）
+文件输出 = 打开（“P33_1.txt”，“w”）
+n = 0
+对于文件中的 i：
+n += 1
+fileout.write（i）
+print（“总有{}个神经长度，random_1.txt的各神经长度已另保存到P33_1.txt中”.format（n））
+filein.close
+文件输出.关闭
+
+#3.2 计算平均值和标准差
+导入数学
+数据 = []
+filein = open（“P33_1.txt”，“r”）
+对于文件中的 i：
+长度 = float（i.strip（））
+data.append（length）
+s = 总和（数据）
+l = len（数据）
+平均值 = S/L
+对于数据中的 J：
+biao = math.sqrt（（（j-aver）**2）/l）
+fileout = open（“P33_2.txt”，“w”）
+fileout.write（“平均数为：%.2f \n” %（aver））
+fileout.write（“标准差为：%.2f \n” %（biao））
+
+#3.3 核苷酸的频率
+filein = open（“P33_3.txt”，“r”）
+ge = “ATCG”
+对于简在文件中：
+jian = jian.strip（）
+count_d = {}
+对于 GE 中的 i：
+n = jian.count（i）
+count_d[i] = n
+print（“{}：{}”.format（i，n））
+ls = list（count_d.items（））
+ls.sort（key=lambda x：x[1]，reverse=True）
+print（'最常见的碱基出现频率为{}：{}'.format（ls[0][0]，ls[0][1]））
+filein.close（）
+
+#3.4 DNA序列的GC含量
+filein = open（“P33_3.txt”，“r”）
+P33_3 = filein.read（）
+gc = （P33_3.count（'G'）+P33_3.count（'C'））/len（P33_3）
+打印（str（gc*100）+'%'）
+filein.close
